@@ -1,122 +1,771 @@
+html {
+    overflow-x: hidden;
+
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #A31717; 
+    background-color: #A31717;
+    overflow-x: hidden;
+}
+
+:root {
+    --color-primary: black;
+    --color-secundary: white;
 }
 
 .navbar {
-    width: 80% ; 
+    width: 80%;
     height: 28px;
     position: absolute;
     top: 46px;
     left: 4em;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    padding: 0 100px; 
+    align-items: center;
+    padding: 0 100px;
+}
+
+.botonH{
+    display: none;
 }
 
 .logo {
     font-size: 16px;
     font-weight: bold;
-    color: #ffffff; 
+    color: var(--color-secundary);
 }
 
 .nav-links a {
-    color: #ffffff; 
+    color: #ffffff;
     text-decoration: none;
     line-height: 28px;
     margin-left: 20px;
 }
 
+.section-my {
+    margin: 100px 0;
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
 .container {
-    width: 1065px ; 
-    height: 450px;
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 2fr 0.5fr 0.5fr;
     position: relative;
-    top: 171px;
-    left: 4em;
-    padding: 0 100px; 
-   
-    
+    padding: 0 100px;
+    margin-left: 5cm;
 }
 
-.titulo {
+.section1 .titulo {
     text-align: left;
     grid-row: 1/2;
     grid-column: 1;
     color: #ffffff;
     font-family: sans-serif;
-    font-size: 25px;
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,  
-        -1px  1px 0 #000,
-         1px  1px 0 #000; 
-    
+    font-size: 50px;
+    font-weight: 900;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
-.texto {
+.section1 .texto {
     text-align: justify;
     grid-row: 2;
     grid-column: 1;
     color: #ffffff;
-    
+    font-size: 19px;
+    margin-right: 4rem;
 }
 
-.btn {
-    padding: 10px 20px;
-    color: #fff; 
-    background-color: #3F3434; 
+.section1 .btn {
+    margin-top: 2rem;
+    padding: 10px 10px;
+    color: #fff;
+    background-color: #3F3434;
     border: none;
-    border-radius: 10px; 
+    border-radius: 10px;
     cursor: pointer;
-    width: 200px; 
+    width: 200px;
     height: 50px;
     grid-row: 3;
     grid-column: 1;
-    
+    font-size: 20px;
 }
 
 .btn:hover {
-    background-color: #000000; 
+    background-color: #000000;
 }
 
-.imagen1 {
+.section1 .imagen1 {
+    margin-left: -3cm;
     background-image: url('./Imagenes/imagen1.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     grid-row: 1/4;
     grid-column: 2/4;
-   
+    width: 900px;
+    max-width: 100%;
 }
-.container-2 {
-    width: 915px ; 
-    height: 118px;
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .section1 .titulo,
+    .section1 .texto,
+    .section1 .btn {
+        grid-column: 1/2;
+        text-align: center;
+
+    }
+
+    .section1 .titulo {
+        font-size: 35px;
+        text-shadow: none;
+    }
+
+    .section1 .texto {
+        font-size: 15px;
+        margin-left: 3rem;
+        margin-right: -5.5rem;
+        padding-right: 5rem;
+        text-align: center;
+
+    }
+
+    .section1 .btn {
+        width: 150px;
+        height: 40px;
+        font-size: 18px;
+        background-color: #000;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .section1 .imagen1 {
+        width: 475px;
+        height: 475px;
+        align-items: center;
+        margin-left: -0.1rem;
+        margin-right: -5.5rem;
+        padding: 10px;
+
+    }
+
+}
+
+.TextSpo {
+    align-items: center;
+    text-align: center;
+    color: grey;
+}
+
+.containerSpo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Cuatro columnas de igual tamaño */
+    /* Espaciado entre las celdas */
+}
+
+.one,
+.two,
+.three,
+.four {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente el texto con el ícono */
+    color: #ffffff;
+    padding: 25px;
+
+    border-radius: 1px;
+    /* Opcional: redondea las esquinas */
+    background-color: grey;
+    /* Opcional: agrega un color de fondo */
+}
+
+.one {
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+
+.two {
+    grid-column: 2 / 4;
+    grid-row: 1;
+}
+
+.three {
+    grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+.four {
+    grid-column: 4/4;
+    grid-row: 1;
+}
+
+/* Estilo para los íconos si es necesario ajustar su tamaño */
+.one i,
+.two i,
+.three i,
+.four i {
+    margin-right: 7px;
+    /* Espacio entre el ícono y el texto */
+    font-size: 1.5rem;
+    /* Ajusta el tamaño del ícono según sea necesario */
+}
+
+@media (max-width: 768px) {
+    .section2 .containerSpo {
+        margin: 0 1rem;
+        border-radius: 5%;
+    }
+
+    .section2 .imagen-2 {
+        width: 80%;
+
+    }
+
+    .one,
+    .two,
+    .three,
+    .four {
+        padding: 25px;
+        background-color: #331B3B;
+        /* Opcional: agrega un color de fondo */
+        font-size: 10x;
+
+
+    }
+
+    .one i,
+    .two i,
+    .three i,
+    .four i {
+        margin-left: 2px;
+        /* Espacio entre el ícono y el texto */
+        font-size: 1rem;
+        /* Ajusta el tamaño del ícono según sea necesario */
+
+    }
+}
+
+
+.section3 .container2 {
+    width: 100%;
+    max-width: 100rem;
+    height: 28.125rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    padding: 0 6.25rem;
+
+}
+
+.section3 .imagen-3 {
+    width: 100%;
+    /* Ocupa la mitad del ancho del contenedor */
+    height: 25rem;
+    background-image: url('./Imagenes/imagenlapiz.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Espacio entre la imagen y el texto */
+}
+
+.content {
+    width: 70%;
+    /* Ajusta el ancho del contenido de texto */
+}
+
+.section3 .titulo {
+    text-align: justify;
+    grid-row: 2;
+    grid-column: 2;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+
+}
+
+.texto p {
+
+    text-align: justify;
+    grid-row: 2;
+    grid-column: 2;
+    color: #ffffff;
+    font-size: 19px;
+    margin-right: 4rem;
+
+}
+
+@media (max-width: 768px) {
+    .section3 .container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centra los elementos horizontalmente */
+        padding: 1rem;
+        height: auto;
+    }
+
+    .section3 .titulo {
+        order: 1;
+        /* Asegura que el título esté primero */
+        font-size: 2.2rem;
+        /* Ajusta el tamaño del título si es necesario */
+        margin-bottom: 1rem;
+        /* Espacio debajo del título */
+        width: 100%;
+        text-align: center;
+        /* Centra el texto del título */
+    }
+
+    .section3 .texto p {
+        order: 2;
+        /* Asegura que el texto esté segundo */
+        font-size: 1rem;
+        /* Ajusta el tamaño del texto si es necesario */
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+        /* Centra el texto */
+    }
+
+    .section3 .imagen-3 {
+        order: 3;
+        /* Asegura que la imagen esté tercera */
+        height: 20rem;
+        /* Ajusta la altura de la imagen si es necesario */
+        width: 100%;
+        /* Asegura que la imagen ocupe todo el ancho disponible */
+        margin-top: 1rem;
+        /* Espacio encima de la imagen */
+        background-position: center;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.section4 .container3 {
+    width: 1252px;
+    height: 550px;
+    max-width: 2000px;
+    margin: 0 auto;
+
+}
+
+.section4 .container3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Crea una cuadrícula con 3 columnas de igual tamaño */
+    grid-gap: 50px;
+    grid-auto-rows: minmax(100px, auto);  /* Configura las filas para que tengan una altura mínima de 100px, pero permite que crezcan automáticamente según el contenido */
+
+}
+
+.section4 .titulo {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+
+.section4 .card-1 {
+    grid-column: 1;
+    grid-row: 3 / 5;
+    background-color: #fff;
+    border-radius: 5%;
+}
+
+.section4 .card-2 {
+    grid-column: 2;
+    grid-row: 3 / 5;
+    background-color: #fff;
+    border-radius: 5%;
+}
+
+.section4 .card-3 {
+    grid-column: 3;
+    grid-row: 3/5;
+    background-color: #fff;
+    border-radius: 5%;
+}
+
+.imagen-4 {
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.titulo-card h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 18px;
+    padding: 0px;
+    font-family: 'Hind Vadodara';
+    font-size: 22px;
+    position: relative;
+    color: #331B3B;
+
+    top: -35px;/
+}
+
+.texto-card {
+    margin: 20px;
+    font-family: 'Hind Vadodara';
+    font-size: 20px;
+    opacity: 0.7;
+
+    position: relative;
+    top: -45px;/
+}
+
+.imagen-5 {
+    background-color: #FFEED4;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.imagen-6 {
+    background-color: #D4F0FF;
+    width: 54px;
+    height: 55px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.descripcion {
+    display: none;
+}
+
+/* Responsive Styles */
+
+@media (max-width:768px) {
+    .section4 .container3 {
+        display: flex;
+        /* Cambia a flexbox */
+        flex-direction: column;
+        /* Organiza los elementos en una columna */
+        align-items: center;
+        /* Centra los elementos horizontalmente */
+        gap: 20px;
+        /* Espacio entre las tarjetas */
+        height: auto;
+        width: 100%;
+        /* Asegura que el contenedor ocupe todo el ancho disponible */
+        padding: 0 2rem;
+        /* Añade un padding horizontal al contenedor */
+    }
+
+    .section4 .card-1 {
+        width: calc(100% - 2rem);
+        /* Ajusta el ancho para tener en cuenta el margen */
+        margin: 0 2rem;
+        /* Añade un margen horizontal a la tarjeta */
+        order: 2;
+        /* Establece el orden para que aparezca primero */
+    }
+
+    .section4 .card-2 {
+        width: calc(100% - 2rem);
+        /* Ajusta el ancho para tener en cuenta el margen */
+        margin: 0 2rem;
+        /* Añade un margen horizontal a la tarjeta */
+        order: 1;
+        /* Establece el orden para que aparezca después de la tarjeta 1 */
+    }
+
+    .section4 .card-3 {
+        display: none;
+        /* Oculta la tercera tarjeta en pantallas pequeñas */
+    }
+
+    .section4 .titulo {
+        font-size: 30px;
+        /* Ajusta el tamaño del título si es necesario */
+        margin-bottom: 20px;
+        /* Ajusta el espacio debajo del título si es necesario */
+    }
+
+    .section4 .descripcion {
+        display: flex;
+        color: #fff;
+        font-size: 16px;
+        /* Ajusta el tamaño del párrafo si es necesario */
+        margin-bottom: 20px;
+        /* Ajusta el espacio debajo del párrafo */
+        text-align: center;
+        /* Centra el texto del párrafo */
+        width: calc(100% - 2rem);
+    }
+}
+
+
+
+.Contact-Section {
+    width: 1252px;
+    height: 450px;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.Contact-Section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
-    position: relative;
-    top: 250px;
-    left: 4em;
-    padding: 0 100px; 
-    
-
-    
+    grid-gap: 1px;
+    grid-auto-rows: minmax(80px, auto);
+    background-color: #ADA7A7;
+    border-radius: 1%;
 }
-.imagen-2{
-    width: 915px ;
-    height: 118px;
-    background-image: url('./Imagenes/Companies\ Section.png');
-    background-size: 100% ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    grid-row: 1/4;
-    grid-column: 1/4;
-    left: 0;
 
+.imagen-7 {
+    background-image: url('./Imagenes/customer-support.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    grid-column: 1/3;
+    grid-row: 1/6;
+}
+
+.titulo-contact {
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+}
+
+.texto-contact {
+    color: #ffffff;
+    font-size: 19px;
+    padding-top: 50px;
+    grid-column: 3/5;
+    grid-row: 3 / 4;
+}
+
+.btn {
+    grid-column: 3/5;
+    grid-row: 4;
+    margin-top: 2rem;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #A31717;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    font-size: 19px;
+    text-align: center;
+    display: block;
+}
+
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .Contact-Section {
+        display: flex;
+        width: 450px;
+        height: 450px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #331B3B;
+        border-radius: 7%;
+    }
+
+    .imagen-7 {
+        display: none;
+    }
+
+    .titulo-contact,
+    .texto-contact,
+    .btn {
+        text-align: center;
+    }
+
+    .titulo-contact {
+        font-size: 35px;
+
+        text-align: center;
+    }
+
+    .texto-contact {
+        font-size: 20px;
+        margin-top: -3rem;
+
+    }
+
+    .btn {
+
+        max-height: 200px;
+        max-width: 200px;
+        font-size: 20px;
+
+        text-align: center;
+        background-color: #000;
+        padding: 25px;
+        margin: auto;
+        line-height: 5px;
+    }
+}
+
+footer {
+    background-color: #857978;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1 1 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    margin: 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        justify-content: space-between;
+        padding: 0 10px;
+        left: 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #A31717;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+    .botonH {
+        display: block;
+        text-align: right;
+        width: 100px;
+        margin:-5rem;
+    
+    }
+    .botonHamburguesa{
+        margin-right: 2rem;
+}
+    .logo {
+        font-size: 16px;
+        color: #ffffff;
+        text-align: left;
+        flex: 1;
+    }
+
+
+    footer {
+        background-color: #331B3B;
+        /* Cambia el color del fondo en pantallas pequeñas */
+        color: #eee;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        /* Cambia la dirección de los elementos para que sean columnas */
+        align-items: center;
+        /* Centra todos los elementos */
+    }
+
+    .footer-column {
+        width: 100%;
+        /* Ocupa todo el ancho disponible */
+        margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+        max-width: 120px;
+        /* Ajusta el tamaño del logo en pantallas pequeñas */
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        /* Aumenta el tamaño del texto para mejorar la legibilidad */
+    }
 }
